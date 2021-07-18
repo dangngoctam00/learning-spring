@@ -1,5 +1,6 @@
 package dnt.jpaentitygraph.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class Image {
     private String url;
 
     @ManyToMany(mappedBy = "images", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Post> posts;
 
     @Override

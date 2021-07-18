@@ -11,7 +11,6 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
 public class PostService {
     private PostRepository postRepo;
     private EntityManager entityManager;
@@ -22,12 +21,13 @@ public class PostService {
         this.entityManager = entityManager;
     }
 
+    @Transactional
     public Post getPostById(Long postId) {
         List<Post> posts = entityManager.createQuery("select distinct p " +
                             "from Post p " +
                             "left join fetch p.comments " +
-                            "where p.id = :id", Post.class)
-                .setParameter("id", postId)
+                            "where p.id = :postId", Post.class)
+                .setParameter("postId", postId)
                 .setHint(QueryHints.PASS_DISTINCT_THROUGH, false)
                 .getResultList();
         posts = entityManager.createQuery("select distinct p" +
@@ -39,5 +39,11 @@ public class PostService {
                 .getResultList();
         Post post = posts.get(0);
         return post;
+    }
+
+    @Transactional
+    public void doSomething(Long postId) {
+        Post post = postRepo.getById(postId);
+        post.setTitle("Change title :))");
     }
 }

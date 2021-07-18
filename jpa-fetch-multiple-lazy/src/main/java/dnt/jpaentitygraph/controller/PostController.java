@@ -25,7 +25,7 @@ public class PostController {
     @GetMapping("/{postId}")
     public ResponseEntity<Post> getPosts(@PathVariable("postId") Long postId) {
         Post post = postService.getPostById(postId);
-        post.getComments();
+//        postService.doSomething(postId);
         return new ResponseEntity<>(post, HttpStatus.OK);
     }
 }
