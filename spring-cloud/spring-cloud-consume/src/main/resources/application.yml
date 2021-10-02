@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: consume-service
+server:
+  port: 0
+eureka:
+  instance:
+    hostname: localhost
+

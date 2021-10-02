@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: ingredient-service
+server:
+  port: 0
+eureka:
+  instance:
+    hostname: localhost
