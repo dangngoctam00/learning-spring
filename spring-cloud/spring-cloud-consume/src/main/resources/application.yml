@@ -2,7 +2,7 @@ spring:
   application:
     name: consume-service
 server:
-  port: 0
+  port: 8082
 eureka:
   instance:
     hostname: localhost
