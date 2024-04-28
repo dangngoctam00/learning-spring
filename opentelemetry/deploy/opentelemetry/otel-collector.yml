@@ -1,0 +1,47 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+# Batch all spans.
+processors:
+  batch:
+
+# https://opentelemetry.io/docs/collector/configuration/#exporters
+exporters:
+  debug:
+    verbosity: detailed
+
+
+  otlphttp:
+    endpoint: "http://${EXPORTER_JAEGER_HOST}:4318"
+    tls:
+      insecure: true
+
+  prometheus:
+    endpoint: "0.0.0.0:8889"
+    namespace: default
+
+  loki:
+    endpoint: "http://${LOKI_HOST}:3100/loki/api/v1/push"
+
+extensions:
+  health_check:
+  pprof:
+
+service:
+  extensions: [health_check, pprof]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlphttp]
+    logs:
+      receivers: [otlp]
+      exporters: [loki, debug]
+    metrics:
+      receivers: [otlp]
+      exporters: [prometheus]

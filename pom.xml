@@ -35,6 +35,7 @@
     <module>extra-info-many-to-many</module>
     <module>concurrent-update</module>
     <module>asycn-annotation</module>
+    <module>opentelemetry</module>
   </modules>
 
   <dependencies>

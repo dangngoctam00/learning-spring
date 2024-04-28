@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 10s
+
+scrape_configs:
+  - job_name: "prometheus_scrape"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets: ["${OTEL_COLLECTOR_HOST}:8889"]
