@@ -1,5 +1,11 @@
+# Project
+Dummy project for learning spring feature. 
+
 # Install
 
 ## Install parent module
 
-`mvn cealn install -N`
+```shell
+    mvn cealn install -N
+    mvn clean install -DskipTests
+```
