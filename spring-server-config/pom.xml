@@ -7,18 +7,14 @@
         <module>client</module>
     </modules>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>dntam.spring</groupId>
+        <artifactId>learn-spring</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>com.example</groupId>
     <artifactId>spring-server-config</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>spring-server-config</name>
     <description>spring-server-config</description>
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
 </project>

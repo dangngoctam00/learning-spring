@@ -1,8 +1,8 @@
 package com.dnt.concurrentupdate.domain;
 
 import com.dnt.concurrentupdate.repository.ProductRepository;
-import org.hibernate.SessionFactory;
-import org.hibernate.dialect.lock.OptimisticEntityLockException;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,10 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.io.IOException;
 
 
 @SpringBootTest

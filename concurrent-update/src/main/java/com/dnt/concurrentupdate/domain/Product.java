@@ -1,9 +1,8 @@
 package com.dnt.concurrentupdate.domain;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.*;
 
 @Entity(name = "Product")
 @Table(name = "product")

@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>spring-server-config</artifactId>
-        <groupId>com.example</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>dntam.spring</groupId>
+        <version>1.0.0</version>
     </parent>
     <artifactId>client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
