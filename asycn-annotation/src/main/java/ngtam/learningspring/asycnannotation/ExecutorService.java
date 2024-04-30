@@ -9,12 +9,7 @@ import org.springframework.stereotype.Service;
 public class ExecutorService {
 
     @Async("asyncExecutor")
-    public void test() {
-        try {
-            Thread.sleep(10000L);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    public void sample() {
         log.info("call execute");
     }
 }

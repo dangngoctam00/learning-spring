@@ -18,16 +18,16 @@ import java.util.function.Supplier;
 @ToString
 @ConfigurationProperties(prefix = "app.async.pool")
 @Component
-public class AsyncThreadPoolProperties {
+public class ThreadPoolProperties {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = Math.max(Runtime.getRuntime().availableProcessors() * 2 - 1, 2);
     private static final int DEFAULT_THREAD_POOL_MAX_SIZE = DEFAULT_THREAD_POOL_SIZE * 3;
-    private static final int DEFAULT_THREAD_POOL_QUEUE_SIZE = 1000;
+    private static final int DEFAULT_THREAD_POOL_QUEUE_SIZE = 100000;
 
     int coreSize = DEFAULT_THREAD_POOL_SIZE;
     int maxSize = DEFAULT_THREAD_POOL_MAX_SIZE;
     int queueSize = DEFAULT_THREAD_POOL_QUEUE_SIZE;
-    String prefixName = "async-";
+    String prefixName = "async-test-";
     boolean preStart;
     Policy policy = Policy.ABORT;
 

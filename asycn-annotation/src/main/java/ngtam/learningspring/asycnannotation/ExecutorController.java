@@ -16,7 +16,7 @@ public class ExecutorController {
 
     @GetMapping("")
     public void execute() {
-        executorService.test();
+        executorService.sample();
     }
 
 }
